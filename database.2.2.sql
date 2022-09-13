@@ -24,16 +24,16 @@ create table if not exists executor_album (
 create table if not exists track (
 	id serial primary key,
 	track_name varchar(100) not null unique,
-	duration integer not null,
+	time integer not null,
 	album_id integer references album(id)
 );
-create table if not exists collection_of_songs (
+create table if not exists collections (
     id serial primary key,
     collection_name varchar(100) not null unique,
     year_of_release integer not null
 );
 create table if not exists track_collection (
     track_id integer references track(id),
-    collection_of_songs_id integer references collection_of_songs(id),
-    constraint track_collection_pk primary key (track_id, collection_of_songs_id)
+    collections_id integer references collections(id),
+    constraint track_collection_pk primary key (track_id, collections_id)
 );
