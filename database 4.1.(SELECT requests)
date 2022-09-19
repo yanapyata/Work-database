@@ -22,7 +22,7 @@ SELECT c.collection_name FROM collection_of_songs c
    JOIN album a ON a.id = t.album_id
    JOIN executor_album ea ON a.id = ea.album_id
    JOIN executor e ON e.id = ea.executor_id
-   WHERE e.executor_name LIKE '%%Баста%%';
+   WHERE e.executor_name LIKE '%%Madonna%%';
   
 SELECT a.album_name FROM album a
 	JOIN executor_album ea ON a.id = ea.album_id
